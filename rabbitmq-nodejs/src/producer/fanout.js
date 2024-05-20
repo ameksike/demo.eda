@@ -5,6 +5,7 @@ async function start({ handler, conn, exchange }) {
         type: 'FANOUT',
         send: (obj) => channel.publish(
             exchange.name,
+            // empty or unnecessary
             exchange.routingKey,
             Buffer.from(JSON.stringify(obj)),
             { persistent: true }
