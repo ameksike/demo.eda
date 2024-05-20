@@ -9,7 +9,8 @@
 - npm run consumer:queue
 - npm run consumer:fanout
 - npm run consumer:topic
-- set KEY=topic.* && set QUE=QU_TOPIC_2 && npm run consumer:topic
+- set KEY=topic.2.* && set QUE=QU_TOPIC_2 && npm run consumer:topic
+- set KEY=topic.1.* && set QUE=QU_TOPIC_1 && npm run consumer:topic
 
 
 ### Notes

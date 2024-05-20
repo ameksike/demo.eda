@@ -11,9 +11,9 @@ const { startConsumer: start } = require('../queue');
         conn: await amqplib.connect(config.uri),
         exchange: config.exchange[process.env.EXC] || config.exchange.topic,
         param: {
-            key: process.env.KEY,
-            queue: process.env.QUE,
-            exchange: process.env.EXC
+            key: process.env.KEY?.trim(),
+            queue: process.env.QUE?.trim(),
+            exchange: process.env.EXC?.trim()
         }
     });
 })();
