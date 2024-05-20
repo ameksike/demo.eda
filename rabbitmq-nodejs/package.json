@@ -8,10 +8,12 @@
 
     "consumer:queue": "node ./src/consumer/queue.js",
     "consumer:fanout": "node ./src/consumer/fanout.js",
+    "consumer:direct": "node ./src/consumer/topic.js",
     "consumer:topic": "node ./src/consumer/topic.js",
 
     "producer:queue": "node ./src/producer/queue.js",
     "producer:fanout": "node ./src/producer/fanout.js",
+    "producer:direct": "node ./src/producer/fanout.js",
     "producer:topic": "node ./src/producer/topic.js"
   },
   "keywords": [],
