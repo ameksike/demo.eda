@@ -7,7 +7,7 @@ async function start({ conn, exchange, handler }) {
             channel.consume(
                 queue.name,
                 handler({
-                    type: 'TOPIC',
+                    type: 'DIRECT',
                     end: (msg) => {
                         channel.ack(msg);
                     }

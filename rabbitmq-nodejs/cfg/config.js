@@ -21,11 +21,11 @@ module.exports = {
         },
         direct: {
             queues: [{
-                name: "Ex_Qu_fanout",
+                name: "Ex_Qu_Direct",
                 config: { durable: true },
                 pattern: "exact1"
             }, {
-                name: "Ex_Qu_fanout",
+                name: "Ex_Qu_Direct",
                 config: { durable: true },
                 pattern: "exact2"
             }],

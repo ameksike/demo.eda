@@ -2,7 +2,7 @@ async function start({ handler, conn, exchange }) {
     const channel = await conn.createChannel();
     await channel.assertExchange(exchange.name, exchange.type);
     handler({
-        type: 'TOPIC',
+        type: 'DIRECT',
         send: (obj) => channel.publish(
             exchange.name,
             exchange.routingKey,
