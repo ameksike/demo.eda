@@ -10,42 +10,34 @@ module.exports = {
     },
     exchange: {
         fanout: {
-            queues: [{
-                name: "Ex_Qu_FANOUT_1",
+            queue: {
+                name: "QU_FANOUT_1",
                 config: { durable: true },
                 pattern: ""
-            }],
-            name: "Ex_Fanout",
+            },
+            name: "EX_FANOUT",
             type: "fanout",
             routingKey: ""
         },
         direct: {
-            queues: [{
-                name: "Ex_Qu_DIRECT_1",
+            queue: {
+                name: "QU_DIRECT_1",
                 config: { durable: true },
-                pattern: "exact1"
-            }, {
-                name: "Ex_Qu_DIRECT_2",
-                config: { durable: true },
-                pattern: "exact2"
-            }],
-            name: "Ex_Direct",
+                pattern: "direct.data"
+            },
+            name: "EX_DIRECT",
             type: "direct",
-            routingKey: "exact1"
+            routingKey: "direct.data"
         },
         topic: {
-            queues: [{
-                name: "Ex_Qu_TOPIC_1",
+            queue: {
+                name: "QU_TOPIC_1",
                 config: { durable: true },
-                pattern: "exact1"
-            }, {
-                name: "Ex_Qu_TOPIC_2",
-                config: { durable: true },
-                pattern: "exact2"
-            }],
-            name: "Ex_Topic",
+                pattern: "topic.*"
+            },
+            name: "EX_TOPIC",
             type: "topic",
-            routingKey: "exact2"
+            routingKey: "topic.data.1"
         }
     }
 }
