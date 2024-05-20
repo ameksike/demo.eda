@@ -11,7 +11,7 @@ module.exports = {
     exchange: {
         fanout: {
             queues: [{
-                name: "Ex_Qu_fanout",
+                name: "Ex_Qu_FANOUT_1",
                 config: { durable: true },
                 pattern: ""
             }],
@@ -21,11 +21,11 @@ module.exports = {
         },
         direct: {
             queues: [{
-                name: "Ex_Qu_Direct",
+                name: "Ex_Qu_DIRECT_1",
                 config: { durable: true },
                 pattern: "exact1"
             }, {
-                name: "Ex_Qu_Direct",
+                name: "Ex_Qu_DIRECT_2",
                 config: { durable: true },
                 pattern: "exact2"
             }],
@@ -34,9 +34,18 @@ module.exports = {
             routingKey: "exact1"
         },
         topic: {
+            queues: [{
+                name: "Ex_Qu_TOPIC_1",
+                config: { durable: true },
+                pattern: "exact1"
+            }, {
+                name: "Ex_Qu_TOPIC_2",
+                config: { durable: true },
+                pattern: "exact2"
+            }],
             name: "Ex_Topic",
             type: "topic",
-            routingKey: ""
+            routingKey: "exact2"
         }
     }
 }

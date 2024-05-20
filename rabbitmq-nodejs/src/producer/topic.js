@@ -1,23 +1,10 @@
-async function start({ handler, conn, exchange }) {
-    const channel = await conn.createChannel();
-    await channel.assertExchange(exchange.name, exchange.type);
-    handler({
-        type: 'TOPIC',
-        send: (obj) => channel.publish(
-            exchange.name,
-            exchange.routingKey,
-            Buffer.from(JSON.stringify(obj)),
-            { persistent: true }
-        )
-    });
-}
-
-// -------------------------------------------------------
 const amqplib = require('amqplib');
 const config = require('../../cfg/config');
+
 const { handlerProducer: handler } = require('../handler');
+const { startProducer: start } = require('../queue');
 
 (async () => {
     const conn = await amqplib.connect(config.uri);
-    start({ handler, conn, exchange: config.exchange.fanout });
+    start({ handler, conn, exchange: config.exchange.topic });
 })();
