@@ -5,3 +5,4 @@
 - [npm](https://www.npmjs.com/package/kafkajs)
 - [Producer](https://kafka.js.org/docs/producer-example)
 - [Consumer](https://kafka.js.org/docs/consumer-example)
+- [Kafka UI](https://github.com/provectus/kafka-ui)
